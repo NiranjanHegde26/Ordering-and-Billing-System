@@ -57,7 +57,7 @@
             this.customer_NameTextBox = new System.Windows.Forms.TextBox();
             this.order_Ref_NoTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Calculator = new System.Windows.Forms.TabControl();
+            this.tabController = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lblShowCal = new System.Windows.Forms.Label();
             this.button19 = new System.Windows.Forms.Button();
@@ -80,6 +80,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lblDisplay = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.receiptBox = new System.Windows.Forms.RichTextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.orderDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,13 +122,13 @@
             this.qty2TextBox = new System.Windows.Forms.TextBox();
             this.qty3TextBox = new System.Windows.Forms.TextBox();
             this.qty1TextBox = new System.Windows.Forms.TextBox();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
+            this.CalcButton = new System.Windows.Forms.Button();
+            this.OrderInfo = new System.Windows.Forms.Button();
+            this.receipt = new System.Windows.Forms.Button();
+            this.AddtoCart = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.totalCalculate = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -137,7 +138,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.net_TotalTextBox = new System.Windows.Forms.TextBox();
-            this.gSTTextBox = new System.Windows.Forms.TextBox();
+            this.gstTextBox = new System.Windows.Forms.TextBox();
             this.net_Sub_TotalTextBox = new System.Windows.Forms.TextBox();
             this.orderTableAdapter = new Ordering_System.OrderDataSetTableAdapters.OrderTableAdapter();
             this.tableAdapterManager = new Ordering_System.OrderDataSetTableAdapters.TableAdapterManager();
@@ -176,8 +177,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.Calculator.SuspendLayout();
+            this.tabController.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderDataGridView)).BeginInit();
             this.tabPage4.SuspendLayout();
@@ -247,7 +249,7 @@
             qty1Label.AutoSize = true;
             qty1Label.Location = new System.Drawing.Point(233, 129);
             qty1Label.Name = "qty1Label";
-            qty1Label.Size = new System.Drawing.Size(0, 22);
+            qty1Label.Size = new System.Drawing.Size(0, 35);
             qty1Label.TabIndex = 14;
             // 
             // unit_Price_2Label
@@ -265,7 +267,7 @@
             qty3Label.AutoSize = true;
             qty3Label.Location = new System.Drawing.Point(257, 227);
             qty3Label.Name = "qty3Label";
-            qty3Label.Size = new System.Drawing.Size(0, 22);
+            qty3Label.Size = new System.Drawing.Size(0, 35);
             qty3Label.TabIndex = 18;
             // 
             // qty2Label
@@ -273,7 +275,7 @@
             qty2Label.AutoSize = true;
             qty2Label.Location = new System.Drawing.Point(204, 178);
             qty2Label.Name = "qty2Label";
-            qty2Label.Size = new System.Drawing.Size(0, 22);
+            qty2Label.Size = new System.Drawing.Size(0, 35);
             qty2Label.TabIndex = 19;
             qty2Label.Click += new System.EventHandler(this.Qty2Label_Click);
             // 
@@ -282,7 +284,7 @@
             unit_Price_1Label.AutoSize = true;
             unit_Price_1Label.Location = new System.Drawing.Point(421, 111);
             unit_Price_1Label.Name = "unit_Price_1Label";
-            unit_Price_1Label.Size = new System.Drawing.Size(0, 22);
+            unit_Price_1Label.Size = new System.Drawing.Size(0, 35);
             unit_Price_1Label.TabIndex = 21;
             // 
             // unit_Price_2Label1
@@ -290,7 +292,7 @@
             unit_Price_2Label1.AutoSize = true;
             unit_Price_2Label1.Location = new System.Drawing.Point(434, 176);
             unit_Price_2Label1.Name = "unit_Price_2Label1";
-            unit_Price_2Label1.Size = new System.Drawing.Size(0, 22);
+            unit_Price_2Label1.Size = new System.Drawing.Size(0, 35);
             unit_Price_2Label1.TabIndex = 23;
             // 
             // unit_Price_3Label
@@ -298,7 +300,7 @@
             unit_Price_3Label.AutoSize = true;
             unit_Price_3Label.Location = new System.Drawing.Point(444, 238);
             unit_Price_3Label.Name = "unit_Price_3Label";
-            unit_Price_3Label.Size = new System.Drawing.Size(0, 22);
+            unit_Price_3Label.Size = new System.Drawing.Size(0, 35);
             unit_Price_3Label.TabIndex = 25;
             // 
             // sub_Total_1Label
@@ -306,7 +308,7 @@
             sub_Total_1Label.AutoSize = true;
             sub_Total_1Label.Location = new System.Drawing.Point(602, 117);
             sub_Total_1Label.Name = "sub_Total_1Label";
-            sub_Total_1Label.Size = new System.Drawing.Size(0, 22);
+            sub_Total_1Label.Size = new System.Drawing.Size(0, 35);
             sub_Total_1Label.TabIndex = 27;
             // 
             // sub_Total_2Label
@@ -314,7 +316,7 @@
             sub_Total_2Label.AutoSize = true;
             sub_Total_2Label.Location = new System.Drawing.Point(619, 163);
             sub_Total_2Label.Name = "sub_Total_2Label";
-            sub_Total_2Label.Size = new System.Drawing.Size(0, 22);
+            sub_Total_2Label.Size = new System.Drawing.Size(0, 35);
             sub_Total_2Label.TabIndex = 29;
             // 
             // sub_Total_3Label
@@ -322,7 +324,7 @@
             sub_Total_3Label.AutoSize = true;
             sub_Total_3Label.Location = new System.Drawing.Point(588, 222);
             sub_Total_3Label.Name = "sub_Total_3Label";
-            sub_Total_3Label.Size = new System.Drawing.Size(0, 22);
+            sub_Total_3Label.Size = new System.Drawing.Size(0, 35);
             sub_Total_3Label.TabIndex = 31;
             // 
             // net_Sub_TotalLabel
@@ -371,9 +373,9 @@
             this.groupBox1.Controls.Add(order_Ref_NoLabel);
             this.groupBox1.Controls.Add(this.order_Ref_NoTextBox);
             this.groupBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(1, 30);
+            this.groupBox1.Location = new System.Drawing.Point(0, 30);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(751, 249);
+            this.groupBox1.Size = new System.Drawing.Size(751, 258);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ordering and Billing System";
@@ -414,6 +416,7 @@
             this.customer_PhoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "Customer_Phone", true));
             this.customer_PhoneTextBox.Font = new System.Drawing.Font("Lucida Fax", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customer_PhoneTextBox.Location = new System.Drawing.Point(208, 114);
+            this.customer_PhoneTextBox.MaxLength = 10;
             this.customer_PhoneTextBox.Name = "customer_PhoneTextBox";
             this.customer_PhoneTextBox.Size = new System.Drawing.Size(207, 29);
             this.customer_PhoneTextBox.TabIndex = 9;
@@ -442,7 +445,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Controls.Add(this.Calculator);
+            this.groupBox2.Controls.Add(this.tabController);
             this.groupBox2.Location = new System.Drawing.Point(758, 30);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(597, 435);
@@ -450,17 +453,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
-            // Calculator
+            // tabController
             // 
-            this.Calculator.Controls.Add(this.tabPage1);
-            this.Calculator.Controls.Add(this.tabPage2);
-            this.Calculator.Controls.Add(this.tabPage3);
-            this.Calculator.Controls.Add(this.tabPage4);
-            this.Calculator.Location = new System.Drawing.Point(25, 28);
-            this.Calculator.Name = "Calculator";
-            this.Calculator.SelectedIndex = 0;
-            this.Calculator.Size = new System.Drawing.Size(535, 404);
-            this.Calculator.TabIndex = 0;
+            this.tabController.Controls.Add(this.tabPage1);
+            this.tabController.Controls.Add(this.tabPage2);
+            this.tabController.Controls.Add(this.tabPage3);
+            this.tabController.Controls.Add(this.tabPage4);
+            this.tabController.Location = new System.Drawing.Point(25, 28);
+            this.tabController.Name = "tabController";
+            this.tabController.SelectedIndex = 0;
+            this.tabController.Size = new System.Drawing.Size(535, 404);
+            this.tabController.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -715,6 +718,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.receiptBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -722,6 +726,15 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Receipt";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // receiptBox
+            // 
+            this.receiptBox.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.receiptBox.Location = new System.Drawing.Point(25, 18);
+            this.receiptBox.Name = "receiptBox";
+            this.receiptBox.Size = new System.Drawing.Size(476, 339);
+            this.receiptBox.TabIndex = 0;
+            this.receiptBox.Text = "";
             // 
             // tabPage3
             // 
@@ -1007,13 +1020,13 @@
             this.groupBox3.Controls.Add(unit_Price_2Label);
             this.groupBox3.Controls.Add(qty1Label);
             this.groupBox3.Controls.Add(this.qty1TextBox);
-            this.groupBox3.Controls.Add(this.button26);
-            this.groupBox3.Controls.Add(this.button25);
-            this.groupBox3.Controls.Add(this.button24);
-            this.groupBox3.Controls.Add(this.button23);
+            this.groupBox3.Controls.Add(this.CalcButton);
+            this.groupBox3.Controls.Add(this.OrderInfo);
+            this.groupBox3.Controls.Add(this.receipt);
+            this.groupBox3.Controls.Add(this.AddtoCart);
             this.groupBox3.Controls.Add(this.button22);
-            this.groupBox3.Controls.Add(this.button21);
-            this.groupBox3.Controls.Add(this.button20);
+            this.groupBox3.Controls.Add(this.saveButton);
+            this.groupBox3.Controls.Add(this.totalCalculate);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label10);
@@ -1021,13 +1034,13 @@
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(1, 285);
+            this.groupBox3.Font = new System.Drawing.Font("MS Reference Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(1, 294);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(751, 377);
+            this.groupBox3.Size = new System.Drawing.Size(751, 368);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = " ";
+            this.groupBox3.Text = " Item Cart";
             this.groupBox3.Enter += new System.EventHandler(this.GroupBox3_Enter);
             // 
             // sub_Total_3TextBox
@@ -1114,48 +1127,49 @@
             this.qty1TextBox.Size = new System.Drawing.Size(117, 29);
             this.qty1TextBox.TabIndex = 15;
             // 
-            // button26
+            // CalcButton
             // 
-            this.button26.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button26.Location = new System.Drawing.Point(274, 294);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(125, 39);
-            this.button26.TabIndex = 14;
-            this.button26.Text = "Calculator";
-            this.button26.UseVisualStyleBackColor = true;
-            this.button26.Click += new System.EventHandler(this.Button26_Click);
+            this.CalcButton.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalcButton.Location = new System.Drawing.Point(274, 294);
+            this.CalcButton.Name = "CalcButton";
+            this.CalcButton.Size = new System.Drawing.Size(113, 39);
+            this.CalcButton.TabIndex = 14;
+            this.CalcButton.Text = "Calculator";
+            this.CalcButton.UseVisualStyleBackColor = true;
+            this.CalcButton.Click += new System.EventHandler(this.Calc_Click);
             // 
-            // button25
+            // OrderInfo
             // 
-            this.button25.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button25.Location = new System.Drawing.Point(497, 294);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(75, 39);
-            this.button25.TabIndex = 13;
-            this.button25.Text = "Order";
-            this.button25.UseVisualStyleBackColor = true;
-            this.button25.Click += new System.EventHandler(this.Button25_Click);
+            this.OrderInfo.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrderInfo.Location = new System.Drawing.Point(497, 294);
+            this.OrderInfo.Name = "OrderInfo";
+            this.OrderInfo.Size = new System.Drawing.Size(75, 39);
+            this.OrderInfo.TabIndex = 13;
+            this.OrderInfo.Text = "Order";
+            this.OrderInfo.UseVisualStyleBackColor = true;
+            this.OrderInfo.Click += new System.EventHandler(this.Order_Click);
             // 
-            // button24
+            // receipt
             // 
-            this.button24.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.Location = new System.Drawing.Point(405, 294);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(86, 39);
-            this.button24.TabIndex = 12;
-            this.button24.Text = "Receipt";
-            this.button24.UseVisualStyleBackColor = true;
+            this.receipt.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receipt.Location = new System.Drawing.Point(393, 294);
+            this.receipt.Name = "receipt";
+            this.receipt.Size = new System.Drawing.Size(98, 39);
+            this.receipt.TabIndex = 12;
+            this.receipt.Text = "Receipt";
+            this.receipt.UseVisualStyleBackColor = true;
+            this.receipt.Click += new System.EventHandler(this.receiptGenerate);
             // 
-            // button23
+            // AddtoCart
             // 
-            this.button23.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.Location = new System.Drawing.Point(578, 294);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(139, 39);
-            this.button23.TabIndex = 11;
-            this.button23.Text = "Add to Cart";
-            this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.Button23_Click);
+            this.AddtoCart.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddtoCart.Location = new System.Drawing.Point(578, 294);
+            this.AddtoCart.Name = "AddtoCart";
+            this.AddtoCart.Size = new System.Drawing.Size(139, 39);
+            this.AddtoCart.TabIndex = 11;
+            this.AddtoCart.Text = "Add to Cart";
+            this.AddtoCart.UseVisualStyleBackColor = true;
+            this.AddtoCart.Click += new System.EventHandler(this.AddToCart);
             // 
             // button22
             // 
@@ -1166,27 +1180,29 @@
             this.button22.TabIndex = 10;
             this.button22.Text = "Reset";
             this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.Button22_Click);
+            this.button22.Click += new System.EventHandler(this.Reset_Click);
             // 
-            // button21
+            // saveButton
             // 
-            this.button21.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button21.Location = new System.Drawing.Point(193, 294);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 39);
-            this.button21.TabIndex = 9;
-            this.button21.Text = "Save";
-            this.button21.UseVisualStyleBackColor = true;
+            this.saveButton.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveButton.Location = new System.Drawing.Point(193, 294);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 39);
+            this.saveButton.TabIndex = 9;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveOrderInfo);
             // 
-            // button20
+            // totalCalculate
             // 
-            this.button20.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.Location = new System.Drawing.Point(31, 294);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 39);
-            this.button20.TabIndex = 8;
-            this.button20.Text = "Total";
-            this.button20.UseVisualStyleBackColor = true;
+            this.totalCalculate.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalCalculate.Location = new System.Drawing.Point(31, 294);
+            this.totalCalculate.Name = "totalCalculate";
+            this.totalCalculate.Size = new System.Drawing.Size(75, 39);
+            this.totalCalculate.TabIndex = 8;
+            this.totalCalculate.Text = "Total";
+            this.totalCalculate.UseVisualStyleBackColor = true;
+            this.totalCalculate.Click += new System.EventHandler(this.orderTotal);
             // 
             // label13
             // 
@@ -1267,12 +1283,12 @@
             this.groupBox4.Controls.Add(net_TotalLabel);
             this.groupBox4.Controls.Add(this.net_TotalTextBox);
             this.groupBox4.Controls.Add(gSTLabel);
-            this.groupBox4.Controls.Add(this.gSTTextBox);
+            this.groupBox4.Controls.Add(this.gstTextBox);
             this.groupBox4.Controls.Add(net_Sub_TotalLabel);
             this.groupBox4.Controls.Add(this.net_Sub_TotalTextBox);
-            this.groupBox4.Location = new System.Drawing.Point(758, 471);
+            this.groupBox4.Location = new System.Drawing.Point(758, 461);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(597, 191);
+            this.groupBox4.Size = new System.Drawing.Size(597, 201);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             // 
@@ -1286,15 +1302,15 @@
             this.net_TotalTextBox.TabIndex = 5;
             this.net_TotalTextBox.TextChanged += new System.EventHandler(this.Net_TotalTextBox_TextChanged);
             // 
-            // gSTTextBox
+            // gstTextBox
             // 
-            this.gSTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "GST", true));
-            this.gSTTextBox.Font = new System.Drawing.Font("Lucida Fax", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gSTTextBox.Location = new System.Drawing.Point(235, 82);
-            this.gSTTextBox.Name = "gSTTextBox";
-            this.gSTTextBox.Size = new System.Drawing.Size(223, 29);
-            this.gSTTextBox.TabIndex = 3;
-            this.gSTTextBox.TextChanged += new System.EventHandler(this.GSTTextBox_TextChanged);
+            this.gstTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "GST", true));
+            this.gstTextBox.Font = new System.Drawing.Font("Lucida Fax", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gstTextBox.Location = new System.Drawing.Point(235, 82);
+            this.gstTextBox.Name = "gstTextBox";
+            this.gstTextBox.Size = new System.Drawing.Size(223, 29);
+            this.gstTextBox.TabIndex = 3;
+            this.gstTextBox.TextChanged += new System.EventHandler(this.GSTTextBox_TextChanged);
             // 
             // net_Sub_TotalTextBox
             // 
@@ -1356,6 +1372,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.BindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -1461,9 +1478,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            this.Calculator.ResumeLayout(false);
+            this.tabController.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.orderDataGridView)).EndInit();
             this.tabPage4.ResumeLayout(false);
@@ -1486,7 +1504,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TabControl Calculator;
+        private System.Windows.Forms.TabControl tabController;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
@@ -1516,13 +1534,13 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button OrderInfo;
+        private System.Windows.Forms.Button receipt;
+        private System.Windows.Forms.Button AddtoCart;
         private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button totalCalculate;
+        private System.Windows.Forms.Button CalcButton;
         private OrderDataSet orderDataSet;
         private System.Windows.Forms.BindingSource orderBindingSource;
         private OrderDataSetTableAdapters.OrderTableAdapter orderTableAdapter;
@@ -1577,7 +1595,7 @@
         private System.Windows.Forms.TextBox sub_Total_1TextBox;
         private System.Windows.Forms.TextBox net_Sub_TotalTextBox;
         private System.Windows.Forms.TextBox net_TotalTextBox;
-        private System.Windows.Forms.TextBox gSTTextBox;
+        private System.Windows.Forms.TextBox gstTextBox;
         private System.Windows.Forms.Label lblShowCal;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button button27;
@@ -1588,6 +1606,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.RichTextBox receiptBox;
     }
 }
 
