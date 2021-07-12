@@ -13,7 +13,6 @@ namespace Ordering_System
 {
     public partial class Form1 : Form
     {
-        
         String operation;
         Double firstnum;
         Double secondnum;
@@ -300,7 +299,7 @@ namespace Ordering_System
             String currDate = today.ToString("dd/MM/yy");
 
             SqlConnection openCon = new SqlConnection();
-            String filePath = "C:\\Users\\R Vishwas\\Desktop\\Ordering-and-Billing-System\\Ordering System\\Order.mdf";
+            String filePath = "C:\\Users\\R Vishwas\\Desktop\\Ordering-and-Billing-System\\Ordering System\\Order.mdf"; // Add your DB File path here.
             String connectString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + filePath + ";Integrated Security=True";
             openCon.ConnectionString = connectString;
             openCon.Open();
@@ -338,7 +337,7 @@ namespace Ordering_System
         {
 
             SqlConnection openCon = new SqlConnection();
-            String filePath = "C:\\Users\\R Vishwas\\Desktop\\Ordering System\\Ordering System\\Order.mdf";
+            String filePath = "C:\\Users\\R Vishwas\\Desktop\\Ordering System\\Ordering System\\Order.mdf"; // Add your DB File path here.
             String connectString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + filePath + ";Integrated Security=True";
             openCon.ConnectionString = connectString;
             openCon.Open();
