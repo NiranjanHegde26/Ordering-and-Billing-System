@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Ordering_System
 {
     public partial class Form1 : Form
     {
+        
         String operation;
         Double firstnum;
         Double secondnum;
@@ -22,11 +24,19 @@ namespace Ordering_System
         int cheese_burger_quantity;
         int grilled_burger_quantity;
         int ham_burger_quantity;
+<<<<<<< HEAD
 
         Double cheese_burger_price = 60.0;
         Double grilled_burger_price = 85.0;
         Double ham_burger_price = 125.0;
 
+=======
+
+        Double cheese_burger_price = 60.0;
+        Double grilled_burger_price = 85.0;
+        Double ham_burger_price = 125.0;
+
+>>>>>>> 467721d25a01a8adc07e6a68319bdae267913d7d
         Double main_currency;
         Double US_Dollar = 0.0135;
         Double British_Pound = 0.0097;
@@ -34,6 +44,8 @@ namespace Ordering_System
         Double Chinese_Yuan = 0.0872;
         Double Riyal = 0.0505;
         Double Yen = 1.4760;
+        
+        //int refNumber = 1; 
         public Form1()
         {
             InitializeComponent();
@@ -42,6 +54,10 @@ namespace Ordering_System
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'orderDataSet.Order' table. You can move, or remove it, as needed.
+            Console.WriteLine(history.GetType());
+
+
+
             comboBox1.Text = "Choose One";
             comboBox1.Items.Add("US Dollars (USA)");
             comboBox1.Items.Add("British Pounds (UK)");
@@ -515,21 +531,102 @@ namespace Ordering_System
             string box_title = "Cart Confirmation";
 
             MessageBox.Show(box_msg, box_title);
+<<<<<<< HEAD
+
+            history.ReadOnly = true;
+            history.AppendText("TODAY'S SALES HISTORY.");
+            history.AppendText("\t \t " + "===================================" + "\t" + Environment.NewLine);
+            history.AppendText(" " + Environment.NewLine);
+            history.AppendText("Cheese burger \t Grilled burger \t Ham burger \t Total amount ");
+            history.AppendText(" " + Environment.NewLine);
+
+            DateTime today = DateTime.Now;
+
+            String currDate = today.ToString("dd/MM/yy");
+
+            SqlConnection openCon = new SqlConnection();
+            String filePath = "C:\\Users\\R Vishwas\\Desktop\\Ordering-and-Billing-System\\Ordering System\\Order.mdf";
+            String connectString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + filePath + ";Integrated Security=True";
+            openCon.ConnectionString = connectString;
+            openCon.Open();
+
+            SqlCommand command;
+            SqlDataReader dataReader;
+            String sql, Output = "";
+
+            sql = "SELECT SUM(CAST(Qty1 AS int)), SUM(CAST(Qty2 AS int)), SUM(CAST(Qty3 AS int)), SUM(CAST(Net_Total AS decimal)) FROM [dbo].[ORDER] WHERE Order_Date=";
+            sql = sql + string.Format("\'{0}\'", currDate) + ";";
+            //sql = "SELECT SUM(CAST(Qty1 AS int)), SUM(CAST(Qty2 AS int)), SUM(CAST(Qty3 AS int)), SUM(CAST(Net_Total AS decimal)) FROM [dbo].[ORDER] WHERE  Order_Date = dateadd(dd,-1,cast(getdate() as date))";
+            command = new SqlCommand(sql, openCon);
+            dataReader = command.ExecuteReader();
+
+            //Console.WriteLine(dataReader);
+
+            while (dataReader.Read())
+            {
+                history.AppendText("         " + dataReader.GetValue(0) + " \t \t" + "         " + dataReader.GetValue(1) + " \t \t" + "         " + dataReader.GetValue(2) + "\t \t" + "         " + dataReader.GetValue(3));
+            }
+
+=======
+>>>>>>> 467721d25a01a8adc07e6a68319bdae267913d7d
         }
 
         private void saveOrderInfo(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            
+            Console.WriteLine(qty1TextBox.Text);
+            cheese_burger_quantity = int.Parse(qty1TextBox.Text);
+            grilled_burger_quantity = int.Parse(qty2TextBox.Text);
+            ham_burger_quantity = int.Parse(qty3TextBox.Text);
+
+=======
+>>>>>>> 467721d25a01a8adc07e6a68319bdae267913d7d
             this.Validate();
             this.orderBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.orderDataSet);
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 467721d25a01a8adc07e6a68319bdae267913d7d
         }
 
         private void BindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            SqlConnection openCon = new SqlConnection();
+            String filePath = "C:\\Users\\R Vishwas\\Desktop\\Ordering System\\Ordering System\\Order.mdf";
+            String connectString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + filePath + ";Integrated Security=True";
+            openCon.ConnectionString = connectString;
+            openCon.Open();
+
+            SqlCommand command;
+            SqlDataReader dataReader;
+            String sql, Output = "";
+
+            sql = "SELECT TOP 1 Order_Ref_No FROM [dbo].[ORDER] ORDER BY Order_Ref_No DESC";
+            command = new SqlCommand(sql, openCon);
+            dataReader = command.ExecuteReader();
+
+            while(dataReader.Read())
+            {
+                Output = Output + dataReader.GetValue(0);
+            }
+
+            //MessageBox.Show(Output);
+
+
+            customer_NameTextBox.Text = "";
+            customer_PhoneTextBox.Text = "";
+            order_Ref_NoTextBox.Text = (int.Parse(Output)+1).ToString();
+            //refNumber++;
+=======
             customer_NameTextBox.Text = "";
             customer_PhoneTextBox.Text = "";
             order_Ref_NoTextBox.Text = "";
+>>>>>>> 467721d25a01a8adc07e6a68319bdae267913d7d
 
             unit_Price_1TextBox.Text = "60";
             unit_Price_2TextBox.Text = "85";
@@ -571,9 +668,20 @@ namespace Ordering_System
             gstTextBox.Text = System.Convert.ToString(gstAmount);
 
             Double grandTotal = gstAmount + subTotal;
+<<<<<<< HEAD
+           net_TotalTextBox.Text = System.Convert.ToString(grandTotal);
+
+
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+=======
             net_TotalTextBox.Text = System.Convert.ToString(grandTotal);
 
 
+>>>>>>> 467721d25a01a8adc07e6a68319bdae267913d7d
 
         }
     }
