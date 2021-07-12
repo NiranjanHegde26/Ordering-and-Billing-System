@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,19 +24,15 @@ namespace Ordering_System
         int cheese_burger_quantity;
         int grilled_burger_quantity;
         int ham_burger_quantity;
-<<<<<<< HEAD
 
         Double cheese_burger_price = 60.0;
         Double grilled_burger_price = 85.0;
         Double ham_burger_price = 125.0;
 
-=======
-
         Double cheese_burger_price = 60.0;
         Double grilled_burger_price = 85.0;
         Double ham_burger_price = 125.0;
 
->>>>>>> 467721d25a01a8adc07e6a68319bdae267913d7d
         Double main_currency;
         Double US_Dollar = 0.0135;
         Double British_Pound = 0.0097;
@@ -44,8 +40,7 @@ namespace Ordering_System
         Double Chinese_Yuan = 0.0872;
         Double Riyal = 0.0505;
         Double Yen = 1.4760;
-        
-        //int refNumber = 1; 
+
         public Form1()
         {
             InitializeComponent();
@@ -54,10 +49,6 @@ namespace Ordering_System
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'orderDataSet.Order' table. You can move, or remove it, as needed.
-            Console.WriteLine(history.GetType());
-
-
-
             comboBox1.Text = "Choose One";
             comboBox1.Items.Add("US Dollars (USA)");
             comboBox1.Items.Add("British Pounds (UK)");
@@ -93,225 +84,11 @@ namespace Ordering_System
 
         }
 
-
-        private void GroupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GroupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button3_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button4_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
         private void OrderBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.orderBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.orderDataSet);
-        }
-
-        private void OrderDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void OrderBindingNavigator_RefreshItems(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Order_Ref_NoLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Order_Ref_NoTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Customer_NameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Customer_NameTextBox_TextChanged(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void Customer_PhoneTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Customer_PhoneLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Order_DateLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Order_DateTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Order_TimeTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Order_TimeLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GroupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Unit_Price_2Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Unit_Price_2TextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Qty2Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Qty2TextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Unit_Price_2TextBox_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Sub_Total_3TextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Net_Sub_TotalTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Net_Sub_TotalLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GSTTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GSTLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Net_TotalTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Button_Click(object sender, EventArgs e)
@@ -324,11 +101,7 @@ namespace Ordering_System
                lblDisplay.Text += num.Text;
         }
 
-        private void Label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void Calc_Operators(object sender, EventArgs e)
         {
             Button ops = (Button)sender;
@@ -336,11 +109,6 @@ namespace Ordering_System
             lblDisplay.Text = "";
             operation = ops.Text;
             lblShowCal.Text = System.Convert.ToString(firstnum) + " " + operation;
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void getResult(object sender, EventArgs e)
@@ -402,16 +170,6 @@ namespace Ordering_System
                 lblDisplay.Text = "0";
         }
 
-        private void Button17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button27_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void converterCurrency(object sender, EventArgs e)
         {
             textBox2.Text = "";
@@ -450,9 +208,7 @@ namespace Ordering_System
         private void convertFrom(object sender, KeyPressEventArgs e)
         {
             
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        
-            
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);    
         }
 
         private void Clear_Converter(object sender, EventArgs e)
@@ -484,12 +240,12 @@ namespace Ordering_System
             net_TotalTextBox.Text = "0";
             gstTextBox.Text = "0";
         }
+        
         private void Calc_Click(object sender, EventArgs e)
         {
             tabController.SelectedTab = tabPage1;
         }
 
-        
         private void receiptGenerate(object sender, EventArgs e)
         {
             tabController.SelectedTab = tabPage2;
@@ -531,8 +287,7 @@ namespace Ordering_System
             string box_title = "Cart Confirmation";
 
             MessageBox.Show(box_msg, box_title);
-<<<<<<< HEAD
-
+            
             history.ReadOnly = true;
             history.AppendText("TODAY'S SALES HISTORY.");
             history.AppendText("\t \t " + "===================================" + "\t" + Environment.NewLine);
@@ -556,46 +311,32 @@ namespace Ordering_System
 
             sql = "SELECT SUM(CAST(Qty1 AS int)), SUM(CAST(Qty2 AS int)), SUM(CAST(Qty3 AS int)), SUM(CAST(Net_Total AS decimal)) FROM [dbo].[ORDER] WHERE Order_Date=";
             sql = sql + string.Format("\'{0}\'", currDate) + ";";
-            //sql = "SELECT SUM(CAST(Qty1 AS int)), SUM(CAST(Qty2 AS int)), SUM(CAST(Qty3 AS int)), SUM(CAST(Net_Total AS decimal)) FROM [dbo].[ORDER] WHERE  Order_Date = dateadd(dd,-1,cast(getdate() as date))";
+            
             command = new SqlCommand(sql, openCon);
             dataReader = command.ExecuteReader();
-
-            //Console.WriteLine(dataReader);
 
             while (dataReader.Read())
             {
                 history.AppendText("         " + dataReader.GetValue(0) + " \t \t" + "         " + dataReader.GetValue(1) + " \t \t" + "         " + dataReader.GetValue(2) + "\t \t" + "         " + dataReader.GetValue(3));
             }
 
-=======
->>>>>>> 467721d25a01a8adc07e6a68319bdae267913d7d
         }
 
         private void saveOrderInfo(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            
             Console.WriteLine(qty1TextBox.Text);
             cheese_burger_quantity = int.Parse(qty1TextBox.Text);
             grilled_burger_quantity = int.Parse(qty2TextBox.Text);
             ham_burger_quantity = int.Parse(qty3TextBox.Text);
-
-=======
->>>>>>> 467721d25a01a8adc07e6a68319bdae267913d7d
+            
             this.Validate();
             this.orderBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.orderDataSet);
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 467721d25a01a8adc07e6a68319bdae267913d7d
         }
 
         private void BindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             SqlConnection openCon = new SqlConnection();
             String filePath = "C:\\Users\\R Vishwas\\Desktop\\Ordering System\\Ordering System\\Order.mdf";
             String connectString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + filePath + ";Integrated Security=True";
@@ -615,19 +356,14 @@ namespace Ordering_System
                 Output = Output + dataReader.GetValue(0);
             }
 
-            //MessageBox.Show(Output);
-
-
             customer_NameTextBox.Text = "";
             customer_PhoneTextBox.Text = "";
             order_Ref_NoTextBox.Text = (int.Parse(Output)+1).ToString();
-            //refNumber++;
-=======
+          
             customer_NameTextBox.Text = "";
             customer_PhoneTextBox.Text = "";
             order_Ref_NoTextBox.Text = "";
->>>>>>> 467721d25a01a8adc07e6a68319bdae267913d7d
-
+            
             unit_Price_1TextBox.Text = "60";
             unit_Price_2TextBox.Text = "85";
             unit_Price_3TextBox.Text = "125";
@@ -668,21 +404,14 @@ namespace Ordering_System
             gstTextBox.Text = System.Convert.ToString(gstAmount);
 
             Double grandTotal = gstAmount + subTotal;
-<<<<<<< HEAD
-           net_TotalTextBox.Text = System.Convert.ToString(grandTotal);
-
-
+            
+            net_TotalTextBox.Text = System.Convert.ToString(grandTotal);
 
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-=======
             net_TotalTextBox.Text = System.Convert.ToString(grandTotal);
-
-
->>>>>>> 467721d25a01a8adc07e6a68319bdae267913d7d
-
         }
     }
 }
